@@ -5,8 +5,81 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Paint"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Paint" Height="450" Width="800" WindowStartupLocation="CenterScreen" x:Name="mainWindow">
+    <Window.CommandBindings>
+        <CommandBinding Command="New" Executed="NewCommandExecuted"/>
+        <CommandBinding Command="Open" Executed="OpenCommandExecuted"/>
+        <CommandBinding Command="Save" Executed="SaveCommandExecuted"/>
+        <CommandBinding Command="SaveAs" Executed="SaveAsCommandExecuted"/>
+        <CommandBinding Command="Close" Executed="ExitCommandExecuted"/>
+        <CommandBinding Command="{x:Static local:MainWindow.ResizeCommand}" Executed="ResizeCommandExecuted"/>
+        <CommandBinding Command="{x:Static local:MainWindow.WindowCascadeCommand}" Executed="WindowCascadeCommandExecuted"/>
+        <CommandBinding Command="{x:Static local:MainWindow.WindowHorizontalCommand}" Executed="WindowHorizontalCommandExecuted"/>
+        <CommandBinding Command="{x:Static local:MainWindow.WindowVerticalCommand}" Executed="WindowVerticalCommandExecuted"/>
+        <CommandBinding Command="{x:Static local:MainWindow.WindowSortCommand}" Executed="WindowSortCommandExecuted"/>
+        <CommandBinding Command="Help" Executed="HelpCommandExecuted"/>
+    </Window.CommandBindings>
+    
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
         
+        <Menu Grid.Row="0" VerticalAlignment="Top">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Новый" Command="New"/>
+                <MenuItem Header="Открыть..." Command="Open"/>
+                <Separator/>
+                <MenuItem x:Name="saveButton" Header="Сохранить" Command="Save"/>
+                <MenuItem x:Name="saveAsButton" Header="Сохранить как..." Command="SaveAs"/>
+                <Separator/>
+                <MenuItem Header="Выход" Command="Close"/>
+            </MenuItem>
+            <MenuItem Header="Рисунок">
+                <MenuItem Header="Размер холста" Command="{x:Static local:MainWindow.ResizeCommand}" InputGestureText="Ctrl+R"/>
+            </MenuItem>
+            <MenuItem Header="Окно">
+                <MenuItem Header="Каскадом" Command="{x:Static local:MainWindow.WindowCascadeCommand}" InputGestureText="Ctrl+H"/>
+                <MenuItem Header="Слева направо" Command="{x:Static local:MainWindow.WindowHorizontalCommand}" InputGestureText="Ctrl+J"/>
+                <MenuItem Header="Сверху вниз" Command="{x:Static local:MainWindow.WindowVerticalCommand}" InputGestureText="Ctrl+K"/>
+                <MenuItem Header="Упорядочить значки" Command="{x:Static local:MainWindow.WindowSortCommand}" InputGestureText="Ctrl+L"/>
+            </MenuItem>
+            <MenuItem Header="Справка">
+                <MenuItem Header="О программе" Command="Help"/>
+            </MenuItem>
+        </Menu>
+        <ToolBar Grid.Row="1" VerticalAlignment="Top">
+            <MenuItem Width="120" x:Name="ChangeColorButton" Click="ChangeColorButton_Click" Header="Цвет">
+                <MenuItem.Icon>
+                    <Image Source="/img/brush.png"/>
+                </MenuItem.Icon>
+                <MenuItem.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Красный" Click="ChangeRedColor_Click">
+                            <MenuItem.Icon>
+                                <Image Source="/img/redcircle.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="Синий" Click="ChangeBlueColor_Click">
+                            <MenuItem.Icon>
+                                <Image Source="/img/bluecircle.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="Зеленый" Click="ChangeGreenColor_Click">
+                            <MenuItem.Icon>
+                                <Image Source="/img/greencircle.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="Другой..." Click="ChangeOtherColor_Click"/>
+                    </ContextMenu>
+                </MenuItem.ContextMenu>
+            </MenuItem>
+
+            <Separator/>
+            <Label Content="Кисть:"/>
+            <TextBox Width="100" TextChanged="TextBox_TextChanged" Text="3"/>
+        </ToolBar>
     </Grid>
 </Window>
