@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\nickt\source\repos\Paint\Paint\App.xaml
-3-442227833
+5798409641
 
-9833359598
+10-923513180
 15-547627727
-DrawWindow.xaml;MainWindow.xaml;ResizeWindow.xaml;
+DrawWindow.xaml;FileNameInput.xaml;MainWindow.xaml;ResizeWindow.xaml;SaveOrCloseWindow.xaml;
 
-True
+False
 

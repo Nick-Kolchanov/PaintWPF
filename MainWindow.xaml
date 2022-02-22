@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Paint"
         mc:Ignorable="d"
-        Title="Paint" Height="450" Width="800" WindowStartupLocation="CenterScreen" x:Name="mainWindow">
+        Title="Paint" Height="90" Width="800" WindowStartupLocation="CenterScreen" x:Name="mainWindow">
     <Window.CommandBindings>
         <CommandBinding Command="New" Executed="NewCommandExecuted"/>
         <CommandBinding Command="Open" Executed="OpenCommandExecuted"/>
@@ -79,7 +79,57 @@
 
             <Separator/>
             <Label Content="Кисть:"/>
-            <TextBox Width="100" TextChanged="TextBox_TextChanged" Text="3"/>
+            <TextBox Width="50" TextChanged="TextBox_TextChanged" Text="3" TextAlignment="Center"/>
+
+            <Button x:Name="penButton" Width="30" Opacity="0.5" Click="penButton_Click">
+                <StackPanel>
+                    <Image Source="img/pen.png" Height="20"/>
+                </StackPanel>
+            </Button>
+            
+            <Button x:Name="lineButton"  Width="30" Click="lineButton_Click">
+                <StackPanel>
+                    <Image Source="img/line.png" Height="20"/>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="ellipseButton" Width="30" Click="ellipseButton_Click">
+                <StackPanel>
+                    <Image Source="img/oval.png" Height="20" />
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="eraserButton" Width="30" Click="eraserButton_Click">
+                <StackPanel>
+                    <Image Source="img/eraser.png" Height="20"/>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="starButton" Width="30" Click="starButton_Click" >
+                <StackPanel>
+                    <Image Source="img/star.png" Height="20"/>
+                </StackPanel>
+            </Button>
+
+            <Label Content="Кол-во вершин:"/>
+            <TextBox Width="50"  Text="5" TextAlignment="Center" TextChanged="TextBox_TextChanged_1"/>
+
+            <Label Content="Отношение R/r:"/>
+            <TextBox Width="50" Text="2" TextAlignment="Center" TextChanged="TextBox_TextChanged_2"/>
+
+            <Separator/>
+
+            <Button x:Name="plusSizeButton" Width="30" Click="plusSizeButton_Click">
+                <StackPanel>
+                    <Image Source="img/plus.png" Height="20"/>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="minusSizeButton" Width="30" Click="minusSizeButton_Click">
+                <StackPanel>
+                    <Image Source="img/minus.png" Height="20"/>
+                </StackPanel>
+            </Button>
         </ToolBar>
     </Grid>
 </Window>

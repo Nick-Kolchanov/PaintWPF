@@ -5,17 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Paint"
         mc:Ignorable="d"
-        Title="ResizeWindow" Height="200" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Изменение размера" Height="150" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <StackPanel Orientation="Vertical">
-        <StackPanel Orientation="Horizontal" Margin="0 50 0 0">
-            <Label Content="Ширина" Margin="40 0 10 0"/>
-            <TextBox x:Name="widthTextBox" Width="70" VerticalAlignment="Center"/>
-            <Label Content="Высота" Margin="40 0 10 0"/>
-            <TextBox x:Name="heightTextBox" Width="70" VerticalAlignment="Center"/>
+        <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+            <Label Content="Ширина" Margin="25 0 10 0" FontSize="20"/>
+            <TextBox x:Name="widthTextBox" Width="70" VerticalAlignment="Center" FontSize="20"/>
+            <Label Content="Высота" Margin="20 0 10 0" FontSize="20"/>
+            <TextBox x:Name="heightTextBox" Width="70" VerticalAlignment="Center" FontSize="20"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="0 50 0 0">
-            <Button Content="OK" Margin="180 0 30 0" Width="70" Click="Button_Click_1"/>
-            <Button Content="Отмена" Width="70" Click="Button_Click"/>
+        <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+            <Button Content="OK" Margin="150 0 30 0" Width="90" Click="Button_Click_1" IsDefault="True" FontSize="20"/>
+            <Button Content="Отмена" Width="90" Click="Button_Click" IsCancel="True" FontSize="20"/>
         </StackPanel>
     </StackPanel>
 </Window>

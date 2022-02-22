@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Paint"
         mc:Ignorable="d"
         Title="DrawWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
-    <Canvas x:Name="canvas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MouseMove="canvas_MouseMove" MouseDown="canvas_MouseDown" Focusable="True" Background="#FFFFFE"/>
+    <Canvas x:Name="canvas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MouseMove="canvas_MouseMove" MouseDown="canvas_MouseDown" Focusable="True" Background="#FFFFFE" MouseUp="canvas_MouseUp"/>
 
 
 </Window>

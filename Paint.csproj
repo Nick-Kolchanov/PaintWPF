@@ -56,10 +56,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="FileNameInput.xaml.cs">
+      <DependentUpon>FileNameInput.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ResizeWindow.xaml.cs">
       <DependentUpon>ResizeWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SaveOrCloseWindow.xaml.cs">
+      <DependentUpon>SaveOrCloseWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="DrawWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FileNameInput.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -82,9 +92,12 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="SaveOrCloseWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MenuCommands.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -111,9 +124,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="graph.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="img\brush.png" />
   </ItemGroup>
   <ItemGroup>
@@ -126,6 +136,17 @@
       <Project>{587acfba-1a74-4a38-98c4-69442eccb7dc}</Project>
       <Name>WPFColorPickerLib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\eraser.png" />
+    <Resource Include="img\line.png" />
+    <Resource Include="img\minus.png" />
+    <Resource Include="img\oval.png" />
+    <Resource Include="img\pen.png" />
+    <Resource Include="img\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\star.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

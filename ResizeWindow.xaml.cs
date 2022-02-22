@@ -25,6 +25,8 @@ namespace Paint
         public ResizeWindow()
         {
             InitializeComponent();
+            widthTextBox.Text = MainWindow.CanvasWidth.ToString();
+            heightTextBox.Text = MainWindow.CanvasHeight.ToString();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -35,7 +37,8 @@ namespace Paint
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            if (int.TryParse(widthTextBox.Text, out newWidth) && int.TryParse(heightTextBox.Text, out newHeight))
+            
+            if (int.TryParse(widthTextBox.Text, out newWidth) && int.TryParse(heightTextBox.Text, out newHeight) && newWidth > 0 && newHeight > 0)
             {
                 DialogResult = true;
                 Close();
