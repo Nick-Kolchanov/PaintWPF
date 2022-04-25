@@ -13,7 +13,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WPFColorPickerLib;
 using Brush = System.Windows.Media.Brush;
 using Color = System.Windows.Media.Color;
 using Microsoft.Win32;
@@ -38,7 +37,7 @@ namespace Paint
         public static int CanvasWidth { get; set; }
         public static int CanvasHeight { get; set; }
         public static BrushMode CurBrushMode { get; set; }
-        public static Brush PenColor { get; set; }
+        public static SolidColorBrush PenColor { get; set; }
         public static int PenWidth { get; set; }
         public static int StarApexNum { get; set; }
         public static double RadiusRelation { get; set; }
@@ -293,11 +292,10 @@ namespace Paint
 
         private void ChangeOtherColor_Click(object sender, RoutedEventArgs e)
         {
-            ColorDialog colorDialog = new ColorDialog();
-            colorDialog.Owner = this;
-            if ((bool)colorDialog.ShowDialog())
+            ColorPickerWindow colorPicker = new ColorPickerWindow(PenColor);
+            if ((bool)colorPicker.ShowDialog())
             {
-                PenColor = new SolidColorBrush(colorDialog.SelectedColor);
+                PenColor = new SolidColorBrush(colorPicker.SelectedColor);
             }
         }
 
@@ -305,9 +303,7 @@ namespace Paint
         {
             bool isOk = false;
 
-            var textBox = sender as TextBox;
-
-            if (textBox == null)
+            if (!(sender is TextBox textBox))
             {
                 return;
             }
@@ -334,9 +330,8 @@ namespace Paint
         {
             bool isOk = false;
 
-            var textBox = sender as TextBox;
 
-            if (textBox == null)
+            if (!(sender is TextBox textBox))
             {
                 return;
             }
@@ -364,9 +359,8 @@ namespace Paint
         {
             bool isOk = false;
 
-            var textBox = sender as TextBox;
 
-            if (textBox == null)
+            if (!(sender is TextBox textBox))
             {
                 return;
             }

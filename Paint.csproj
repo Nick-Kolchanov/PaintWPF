@@ -56,6 +56,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ColorNumberTextBox.cs" />
+    <Compile Include="ColorPicker.xaml.cs">
+      <DependentUpon>ColorPicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ColorPickerWindow.xaml.cs">
+      <DependentUpon>ColorPickerWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FileNameInput.xaml.cs">
       <DependentUpon>FileNameInput.xaml</DependentUpon>
     </Compile>
@@ -65,6 +72,14 @@
     <Compile Include="SaveOrCloseWindow.xaml.cs">
       <DependentUpon>SaveOrCloseWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="ColorPicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ColorPickerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DrawWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -130,12 +145,6 @@
     <Resource Include="img\bluecircle.png" />
     <Resource Include="img\greencircle.png" />
     <Resource Include="img\redcircle.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Desktop\WPFColorPicker\WPFColorPickerLib\WPFColorPickerLib.csproj">
-      <Project>{587acfba-1a74-4a38-98c4-69442eccb7dc}</Project>
-      <Name>WPFColorPickerLib</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img\eraser.png" />
